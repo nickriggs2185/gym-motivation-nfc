@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LOCK IN 🔥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+      padding: 40px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      background: orange;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🔥 LOCK IN 🔥</h1>
+<p id="quote">Loading motivation...</p>
+
+<button onclick="getQuote()">New Motivation</button>
+
+<script>
+async function getQuote() {
+  const res = await fetch("/api/quote");
+  const data = await res.json();
+  document.getElementById("quote").innerText = data.quote;
+}
+
+getQuote();
+</script>
+
+</body>
+</html>
